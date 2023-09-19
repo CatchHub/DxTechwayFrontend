@@ -1,0 +1,74 @@
+#add-success-alert,
+#update-warning-alert,
+#delete-danger-alert{
+    display: none;
+}
+
+#add-success-alert,
+#update-warning-alert,
+#delete-danger-alert{
+    animation-name: fadeInAndOut;
+    animation-duration: 4s;
+}
+
+@-webkit-keyframes fadeInAndOut{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
+@keyframes fadeInAndOut{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
+.form-check-input{
+    float: left;
+    
+    
+}
+
+td {
+    vertical-align: middle;
+    // width: 20%;
+    padding: 0% !important;
+    text-align: center;
+    font-size: small !important;
+    align-items: center;
+  }
+  th{
+    vertical-align: middle;
+    text-align: center;
+    font-size: small !important;
+    align-items: center;
+  }
+
+.tableDiv{
+    border-radius: 12px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+    // box-shadow: 1px 1px 1px 1px;
+    background-color: white;
+    box-shadow: 20px 20px 80px rgb(218, 218, 218);
+}
+
+.center{
+  text-align: center;
+  justify-items: center !important;
+  padding-top: 10px;
+}
+
+
+mat-card{
+    margin: 2%;
+}
+
+button{
+    margin: 2px;
+}
+
+th{
+    background-color: black !important;
+    color: white;
+}

@@ -1,0 +1,50 @@
+    <form [formGroup]="productForm">
+        <div class="mb-3">
+            <label for="name" class="form-table">Name</label>
+            <input [class.error]="productForm.controls['name'].dirty && productForm.hasError('required','name')" formControlName="name" type="text" class="form-control" #txtName>
+            <small *ngIf="productForm.hasError('required','name')" class="text-danger">*Name is required!</small>
+        </div>
+        <div class="mb-3">
+            <label for="productCode" class="form-table">Product Code</label>
+            <input [class.error]="productForm.controls['productCode'].dirty && productForm.hasError('required','productCode')" formControlName="productCode" type="text" class="form-control" #txtProductCode>
+            <small *ngIf="productForm.hasError('required','productCode')" class="text-danger">*Product Code is required!</small>
+            <small *ngIf="productForm.hasError('pattern','productCode')" class="text-danger">*Please enter a valid numeric value for Product Code!</small>
+        </div>
+        <div class="mb-3">
+            <label for="detail" class="form-table">Detail</label>
+            <input formControlName="detail" type="text" class="form-control" #txtDetail>
+            </div>
+        <div class="mb-3">
+            <label for="brand" class="form-table">Brand</label>
+            <input [class.error]="productForm.controls['brand'].dirty && productForm.hasError('required','brand')" formControlName="brand" type="text" class="form-control" #txtBrand>
+            <small *ngIf="productForm.hasError('required','brand')" class="text-danger">*Brand is required!</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-table">Price</label>
+            <input [class.error]="productForm.controls['price'].dirty && productForm.hasError('required','price')" formControlName="price" type="number" class="form-control" #txtPrice>
+            <small *ngIf="productForm.hasError('required','price')" class="text-danger">*Price is required!</small>
+            <small *ngIf="productForm.hasError('pattern','price')" class="text-danger">*Price must be a valid float number with up to 2 decimal places!</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="currency" class="form-table">Currency</label>
+            <select class="form-control"  #txtCurrency >
+                <option *ngFor="let currency of currencyList" [value]="currency">
+                    {{currency}}
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-table">Stock</label>
+            <input [class.error]="productForm.controls['stock'].dirty && productForm.hasError('required','stock')" formControlName="stock" type="text" class="form-control" #txtStock>
+            <small *ngIf="productForm.hasError('required','stock')" class="text-danger">*Stock is required!</small>
+            <small *ngIf="productForm.hasError('pattern','stock')" class="text-danger">*Please enter a valid numeric value for Stock!</small>
+        </div>
+
+        <button type="submit" (click)="addproduct(txtName, txtDetail,txtProductCode, txtBrand,txtPrice,txtCurrency,txtStock)" [disabled]="!productForm.valid" data-bs-dismiss="modal" class="btn btn-primary">Add</button>
+    </form>
+    
+    
+    
+
